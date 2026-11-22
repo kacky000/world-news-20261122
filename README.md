@@ -27,16 +27,16 @@ dated report before it went in. Figures are as reported and claims are attribute
 | File | What it does |
 | --- | --- |
 | `art/stories.mjs` | The day's stories: headline, region, field, place on the map, tag and source |
-| `art/scenes.mjs` | The drawings, as functions that return SVG shapes |
-| `art/map.mjs` | The world map and its pins |
-| `art/build.mjs` | Lays the page out and writes `art/front-page.html` (generated, not kept in git) |
-| `art/render.mjs` | Photographs the page with a headless browser into `entry.png` |
+| `art/pictures.mjs` | The drawings, as functions that return SVG shapes |
+| `art/worldmap.mjs` | The world map and its numbered pins |
+| `art/page.mjs` | Lays the page out and writes `art/front-page.html` (generated, not kept in git) |
+| `art/shoot.mjs` | Photographs the page with a headless browser into `entry.png` |
 | `main.ts` | The entry program: checks `entry.png` against the limits and writes it to `/output` |
 
 ## Run it
 
 ```sh
-node art/render.mjs                                  # rebuild entry.png (needs Chrome or Edge)
+node art/shoot.mjs                                   # rebuild entry.png (needs Chrome or Edge)
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts  # what the grader runs, writing to out/
 ```
 
